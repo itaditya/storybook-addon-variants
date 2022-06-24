@@ -21,7 +21,7 @@ export const withVariants: DecoratorFunction = (StoryFn, context) => {
   return (
     <Grid>
       {combinations.map((combination, index) => (
-        <li key={index}>
+        <li key={index} title={JSON.stringify(combination, null, 2)}>
           {StoryFn({
             args: {
               ...context.args,
