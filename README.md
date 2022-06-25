@@ -1,3 +1,10 @@
+<p align="center">
+  <br />
+  <img src="./public/logo.png" alt="" />
+  <br />
+  <br />
+</p>
+
 # Storybook Variants Addon
 
 Show all variants of a component in a grid
