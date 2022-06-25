@@ -1,15 +1,20 @@
 {
-  "name": "storybook-addon-kit",
-  "version": "0.0.0",
-  "description": "everything you need to build a Storybook addon",
+  "name": "storybook-addon-variants",
+  "version": "0.0.1",
+  "description": "Show all variants of a component in a grid",
   "keywords": [
-    "storybook-addons"
+    "storybook-addons",
+    "props",
+    "api",
+    "combinations",
+    "mixed",
+    "combined grid"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybookjs/storybook-addon-kit"
+    "url": "https://github.com/itaditya/storybook-addon-variants"
   },
-  "author": "package-author",
+  "author": "itaditya",
   "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -79,9 +84,13 @@
     "access": "public"
   },
   "storybook": {
-    "displayName": "Addon Kit",
+    "displayName": "Variants Addon",
     "supportedFrameworks": [
-      "supported-frameworks"
+      "react",
+      "vue",
+      "svelte",
+      "preact",
+      "react-native"
     ],
     "icon": "https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png"
   },
