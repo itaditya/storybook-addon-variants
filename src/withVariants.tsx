@@ -1,5 +1,5 @@
-import React from "react";
-import type { DecoratorFunction } from "@storybook/addons";
+import React, { useMemo } from "react";
+import { DecoratorFunction } from "@storybook/addons";
 import { styled } from "@storybook/theming";
 import { getCombinations } from "./getCombinations";
 
@@ -11,12 +11,20 @@ const Grid = styled.ul`
   align-items: center;
 `;
 
-export const withVariants: DecoratorFunction = (StoryFn, context) => {
-  if (!context.globals.variantsAddon) {
-    return StoryFn();
-  }
+type StoryParams = Parameters<DecoratorFunction>;
+type StoryFnType = StoryParams[0];
+type ContextType = StoryParams[1];
 
-  const combinations = getCombinations(context.argTypes);
+interface CombinationGridProps {
+  StoryFn: StoryFnType;
+  context: ContextType;
+}
+
+function CombinationGrid({ StoryFn, context }: CombinationGridProps) {
+  const combinations = useMemo(
+    () => getCombinations(context.argTypes),
+    [context.argTypes]
+  );
 
   return (
     <Grid>
@@ -32,4 +40,12 @@ export const withVariants: DecoratorFunction = (StoryFn, context) => {
       ))}
     </Grid>
   );
+}
+
+export const withVariants: DecoratorFunction = (StoryFn, context) => {
+  if (!context.globals.variantsAddon) {
+    return StoryFn();
+  }
+
+  return <CombinationGrid StoryFn={StoryFn} context={context} />;
 };
