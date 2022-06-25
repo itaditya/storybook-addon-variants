@@ -4,6 +4,8 @@ import { styled } from "@storybook/theming";
 import { getCombinations } from "./getCombinations";
 
 const Grid = styled.ul`
+  margin: 0;
+  padding: 0;
   list-style: none;
   display: flex;
   flex-wrap: wrap;

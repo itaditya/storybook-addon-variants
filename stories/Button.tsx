@@ -12,12 +12,7 @@ export interface Props {
  * UI component for user interaction
  */
 export function Button(props: Props) {
-  const {
-    result = "neutral",
-    size = "normal",
-    outline = false,
-    ...restProps
-  } = props;
+  const { result, size, outline, ...restProps } = props;
 
   return (
     <button

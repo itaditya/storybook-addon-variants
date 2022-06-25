@@ -5,7 +5,11 @@ export default {
   title: "Example/Button",
   component: Button,
   args: {
+    ...Button.defaultProps,
     children: "My Button",
+  },
+  parameters: {
+    layout: 'centered',
   },
 };
 
