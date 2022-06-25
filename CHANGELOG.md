@@ -1,3 +1,15 @@
+# v0.0.3 (Sat Jun 25 2022)
+
+#### ⚠️ Pushed to `main`
+
+- add readme ([@itaditya](https://github.com/itaditya))
+
+#### Authors: 1
+
+- Aditya Agarwal ([@itaditya](https://github.com/itaditya))
+
+---
+
 # v0.0.4 (Sat Jun 25 2022)
 
 #### ⚠️ Pushed to `main`
