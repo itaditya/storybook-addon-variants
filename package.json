@@ -96,5 +96,8 @@
   },
   "dependencies": {
     "cartesian": "^1.0.1"
+  },
+  "auto": {
+    "onlyPublishWithReleaseLabel": true
   }
 }
