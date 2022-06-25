@@ -11,7 +11,8 @@ const Grid = styled.ul`
   align-items: center;
 `;
 
-type StoryParams = Parameters<DecoratorFunction>;
+type DecFn = DecoratorFunction<JSX.Element>;
+type StoryParams = Parameters<DecFn>;
 type StoryFnType = StoryParams[0];
 type ContextType = StoryParams[1];
 
@@ -25,6 +26,10 @@ function CombinationGrid({ StoryFn, context }: CombinationGridProps) {
     () => getCombinations(context.argTypes),
     [context.argTypes]
   );
+
+  if (combinations.length === 0) {
+    return StoryFn();
+  }
 
   return (
     <Grid>
@@ -42,7 +47,7 @@ function CombinationGrid({ StoryFn, context }: CombinationGridProps) {
   );
 }
 
-export const withVariants: DecoratorFunction = (StoryFn, context) => {
+export const withVariants: DecFn = (StoryFn, context) => {
   if (!context.globals.variantsAddon) {
     return StoryFn();
   }
