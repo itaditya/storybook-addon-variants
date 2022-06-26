@@ -1,15 +1,8 @@
 import { Args, ArgTypes } from "@storybook/addons";
-// @ts-expect-error
 import cartesian from "cartesian";
 
-type ArgsMap = {
-  [argName: string]: unknown;
-};
-
-type Combinations = Array<Args>;
-
-export function getCombinations(argTypes: ArgTypes) {
-  const argsMap: ArgsMap = {};
+export function getCombinations(argTypes: ArgTypes, args: Args) {
+  const argsMap: Args = {};
 
   // args order can change in stories, sorting ensures grid items don't jump between story previews.
   const sortedArgTypes = [...Object.entries(argTypes)].sort(
@@ -19,17 +12,31 @@ export function getCombinations(argTypes: ArgTypes) {
   );
 
   sortedArgTypes.forEach(([argName, argData]) => {
+    // If args are provided, use them.
+    if (args[argName] !== undefined) {
+      argsMap[argName] = args[argName];
+      return;
+    }
+
+    if (!argData.type) {
+      return;
+    }
+
     // @ts-expect-error
     const { name: typeName, value } = argData.type;
     if (!["enum", "boolean"].includes(typeName)) {
       return;
     }
 
-    const values = typeName === "boolean" ? [true, false] : value;
-    argsMap[argName] = values;
+    if (typeName === "boolean") {
+      argsMap[argName] = [true, false];
+      return;
+    }
+
+    argsMap[argName] = value;
   });
 
-  const combinations = cartesian(argsMap) as Combinations;
+  const combinations = cartesian(argsMap);
 
   return combinations;
 }

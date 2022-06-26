@@ -5,8 +5,12 @@ export default {
   title: "Example/Button",
   component: Button,
   args: {
-    ...Button.defaultProps,
     children: "My Button",
+  },
+  argTypes: {
+    children: {
+      control: 'text'
+    },
   },
   parameters: {
     layout: 'centered',
@@ -15,7 +19,12 @@ export default {
 
 const Template = (args) => <Button {...args} />;
 
+export const AllVariants = Template.bind({});
+
 export const Primary = Template.bind({});
+Primary.args = {
+  outline: false,
+}
 
 export const Outline = Template.bind({});
 Outline.args = {
