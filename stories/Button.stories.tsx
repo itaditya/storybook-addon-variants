@@ -19,6 +19,8 @@ export default {
 
 const Template = (args) => <Button {...args} />;
 
+export const AllVariants = Template.bind({});
+
 export const Primary = Template.bind({});
 Primary.args = {
   outline: false,
@@ -38,5 +40,3 @@ export const Small = Template.bind({});
 Small.args = {
   size: "small",
 };
-
-export const AllVariants = Template.bind({});
