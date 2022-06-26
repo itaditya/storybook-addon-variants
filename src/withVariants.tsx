@@ -25,8 +25,8 @@ interface CombinationGridProps {
 
 function CombinationGrid({ StoryFn, context }: CombinationGridProps) {
   const combinations = useMemo(
-    () => getCombinations(context.argTypes),
-    [context.argTypes]
+    () => getCombinations(context.argTypes, context.args),
+    [context.argTypes, context.args]
   );
 
   if (combinations.length === 0) {
