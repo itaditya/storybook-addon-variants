@@ -20,14 +20,14 @@ Show all variants of a component in a grid
 npm install storybook-addon-variants
 ```
 
-#### And lastly, register the preset
+#### And lastly, register the addon
 
 ```js
 // .storybook/main.js
 
 module.exports = {
   stories: [...],
-  addons: ["storybook-addon-variants/preset.js"],
+  addons: ["storybook-addon-variants"],
 };
 
 ```
