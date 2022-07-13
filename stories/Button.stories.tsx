@@ -11,9 +11,21 @@ export default {
   parameters: {
     layout: 'centered',
   },
+  argTypes: {
+    children: {
+      control: "text"
+    }
+  }
 };
 
 const Template = (args) => <Button {...args} />;
+
+export const AllVariants = Template.bind({});
+AllVariants.parameters = {
+  variants: {
+    enable: true
+  }
+}
 
 export const Primary = Template.bind({});
 
