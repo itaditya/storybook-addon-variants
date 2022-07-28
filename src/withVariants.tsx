@@ -50,9 +50,12 @@ function CombinationGrid({ StoryFn, context }: CombinationGridProps) {
 }
 
 export const withVariants: DecFn = (StoryFn, context) => {
-  if (!context.globals.variantsAddon) {
-    return StoryFn();
-  }
+  const { globals, parameters } = context
+  const shouldShowVariants = globals.variantsAddon === true || parameters.variants?.enable === true
 
-  return <CombinationGrid StoryFn={StoryFn} context={context} />;
+  if (shouldShowVariants) {
+    return <CombinationGrid StoryFn={StoryFn} context={context} />;
+  }
+  
+  return StoryFn();
 };
