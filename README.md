@@ -1,6 +1,6 @@
 <p align="center">
   <br />
-  <img src="./public/logo.png" alt="" />
+  <img src="https://storybook-addon-variants.vercel.app/logo.png" alt="" />
   <br />
   <br />
 </p>
