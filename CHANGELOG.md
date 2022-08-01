@@ -1,3 +1,28 @@
+# v0.1.0 (Mon Aug 01 2022)
+
+#### 🚀 Enhancement
+
+- Aditya release [#8](https://github.com/itaditya/storybook-addon-variants/pull/8) ([@itaditya](https://github.com/itaditya))
+- 0.1.0 [#6](https://github.com/itaditya/storybook-addon-variants/pull/6) ([@itaditya](https://github.com/itaditya))
+
+#### 🐛 Bug Fix
+
+- Revert "0.1.0" [#7](https://github.com/itaditya/storybook-addon-variants/pull/7) ([@itaditya](https://github.com/itaditya))
+- feat: add addon parameter for defining variants stories [#5](https://github.com/itaditya/storybook-addon-variants/pull/5) ([@yannbf](https://github.com/yannbf))
+- docs(README): remove unnecessary /preset from instructions [#4](https://github.com/itaditya/storybook-addon-variants/pull/4) ([@yannbf](https://github.com/yannbf))
+
+#### ⚠️ Pushed to `main`
+
+- show logo in readme ([@itaditya](https://github.com/itaditya))
+- sb static path ([@itaditya](https://github.com/itaditya))
+
+#### Authors: 2
+
+- Aditya Agarwal ([@itaditya](https://github.com/itaditya))
+- Yann Braga ([@yannbf](https://github.com/yannbf))
+
+---
+
 # v0.0.3 (Sat Jun 25 2022)
 
 #### ⚠️ Pushed to `main`
